@@ -7,21 +7,25 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
 	private Button btn;
+	private EditText edt;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		edt = (EditText) findViewById(R.id.editText1);
 		btn = (Button) findViewById(R.id.button1);
 		btn.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0) {
-				Toast.makeText(getApplicationContext(), "Button Clicked", Toast.LENGTH_SHORT).show();				
+				Toast.makeText(getApplicationContext(), "Button Clicked", Toast.LENGTH_SHORT).show();
+				edt.setVisibility(View.VISIBLE);
 			}
 		});
 	}
