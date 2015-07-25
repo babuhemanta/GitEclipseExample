@@ -15,18 +15,24 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 
 	private Button btn;
+	private EditText edt;
+	private RatingBar rtb;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+		edt = (EditText) findViewById(R.id.editText1);
+		rtb = (RatingBar) findViewById(R.id.ratingBar1);
 		btn = (Button) findViewById(R.id.button1);
 		btn.setOnClickListener(new OnClickListener() {
 			
-			@Override
-			public void onClick(View arg0) {				
-				Intent i = new Intent(MainActivity.this, SecondActivity.class);
-				startActivity(i);						
+			@Override			
+			public void onClick(View arg0) {
+				Toast.makeText(MainActivity.this, "Button Clicked to move another activity", Toast.LENGTH_SHORT).show();
+				edt.setVisibility(View.VISIBLE);
+				rtb.setRating(3);
+				Intent intent = new Intent(MainActivity.this,SecondActivity.class);
+				startActivity(intent);
 			}
 		});
 	}
