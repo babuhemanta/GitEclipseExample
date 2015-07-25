@@ -8,17 +8,20 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
 	private Button btn;
 	private EditText edt;
+	private RatingBar rtb;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		edt = (EditText) findViewById(R.id.editText1);
+		rtb = (RatingBar) findViewById(R.id.ratingBar1);
 		btn = (Button) findViewById(R.id.button1);
 		btn.setOnClickListener(new OnClickListener() {
 			
@@ -26,6 +29,7 @@ public class MainActivity extends Activity {
 			public void onClick(View arg0) {
 				Toast.makeText(getApplicationContext(), "Button Clicked", Toast.LENGTH_SHORT).show();
 				edt.setVisibility(View.VISIBLE);
+				rtb.setRating(3);
 			}
 		});
 	}
