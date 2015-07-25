@@ -1,6 +1,7 @@
 package com.hn.gitexample;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,9 +28,11 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View arg0) {
-				Toast.makeText(getApplicationContext(), "Button Clicked", Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(), "Button Clicked to move another activity", Toast.LENGTH_SHORT).show();
 				edt.setVisibility(View.VISIBLE);
 				rtb.setRating(3);
+				Intent intent = new Intent(MainActivity.this,SecondActivity.class);
+				startActivity(intent);
 			}
 		});
 	}
